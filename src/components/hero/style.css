@@ -1,0 +1,7 @@
+/* .{
+    background: linear-gradient(#00000086, #000);
+} */
+ .hero .row{
+    backdrop-filter: blur(3px);
+    min-height: 80vh;
+ }
