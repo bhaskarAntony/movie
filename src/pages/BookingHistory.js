@@ -19,7 +19,7 @@ function BookingHistory() {
   };
 
   return (
-    <div className="bg-black p-3 p-md-5 container-fluid">
+    <div className="bg-black p-3 p-md-5 container-fluid" style={{minHeight:'100vh'}}>
       <center>
         <h1 className="text-white fw-bold">Booking History</h1>
         <hr />
@@ -27,7 +27,7 @@ function BookingHistory() {
       {bookings.length === 0 ? (
         <p className="text-white">No bookings found.</p>
       ) : (
-        <ul className="row">
+        <div className="row">
           {bookings.map((booking) => {
             const movie = movies.find((m) => m.id === parseInt(booking.movieId));
             return (
@@ -50,7 +50,7 @@ function BookingHistory() {
               </div>
             );
           })}
-        </ul>
+        </div>
       )}
     </div>
   );
