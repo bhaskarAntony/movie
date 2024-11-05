@@ -115,7 +115,7 @@ function MovieDetails() {
             <Form.Group className="mt-4">
               <Form.Label>Total Seats Selected: {selectedSeats.length}</Form.Label>
               <br />
-              <Form.Label>Total Price: ${selectedSeats.length * 10}</Form.Label>
+              <Form.Label>Total Price: &#8377;{selectedSeats.length * 300}</Form.Label>
             </Form.Group>
           </Form>
         </Modal.Body>
