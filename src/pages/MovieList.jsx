@@ -29,7 +29,7 @@ function MovieList() {
           <div key={movie.id} className='col-md-3 mb-4 col-6'>
            <div className="h-100 d-flex flex-column justify-content-between">
           <div>
-          <img src={`${movie.poster_path}`} alt={movie.title} className='w-100 rounded' />
+          <img src={`${movie.poster_path}`} alt={movie.title} className='w-100 rounded bg-light mb-3' />
           <h3 className='fs-6 text-white mt-3'>{movie.title}</h3>
           </div>
             <Link to={`/movies/${movie.id}`} className='text-danger'>View Details</Link>

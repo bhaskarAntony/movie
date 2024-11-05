@@ -6,6 +6,6 @@ import bookingReducer from './slices/bookingSlice';
 export const store = configureStore({
   reducer: {
     movies: movieReducer,
-    bookings: bookingReducer,
+    bookings: bookingReducer, 
   },
 });

@@ -5,9 +5,11 @@ const bookingSlice = createSlice({
   name: 'bookings',
   initialState: { history: [] },
   reducers: {
-    addBooking: (state, action) => { state.history.push(action.payload); },
+    addBooking: (state, action) => {
+      state.history.push(action.payload); // Adds the new booking to history
+    },
     cancelBooking: (state, action) => {
-      state.history = state.history.filter(booking => booking.id !== action.payload);
+      state.history = state.history.filter(booking => booking.id !== action.payload); // Removes booking by ID
     },
   },
 });
