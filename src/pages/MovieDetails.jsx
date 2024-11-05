@@ -27,11 +27,11 @@ function MovieDetails() {
       movieName: movie.title,
       showtime: selectedShowtime,
       seats: selectedSeats,
-      totalPrice: selectedSeats.length * 10, // Assuming each ticket costs $10
+      totalPrice: selectedSeats.length * 300,
     };
     bookMovie(booking);
     handleCloseModal();
-    setShowConfirmation(true); // Show confirmation popup
+    setShowConfirmation(true); 
   };
 
   const toggleSeatSelection = (seat) => {
@@ -44,7 +44,6 @@ function MovieDetails() {
 
   const showtimes = ["10:00 AM - 1:00 PM", "2:00 PM - 4:00 PM", "5:00 PM - 7:00 PM"];
 
-  // Generate seat layout in rows and columns
   const seatLayout = [
     ['A1', 'A2', 'A3', 'A4', 'A5'],
     ['B1', 'B2', 'B3', 'B4', 'B5'],
@@ -78,7 +77,6 @@ function MovieDetails() {
         </div>
       </section>
 
-      {/* Booking Modal */}
       <Modal show={showModal} onHide={handleCloseModal} centered>
         <Modal.Header closeButton>
           <Modal.Title>Book Tickets for {movie.title}</Modal.Title>
@@ -132,7 +130,6 @@ function MovieDetails() {
         </Modal.Footer>
       </Modal>
 
-      {/* Confirmation Modal */}
       <Modal show={showConfirmation} onHide={handleCloseConfirmation} centered>
         <Modal.Header closeButton>
           <Modal.Title>Booking Confirmed</Modal.Title>
@@ -141,7 +138,7 @@ function MovieDetails() {
           <p>Thank you for booking! Your seats are confirmed for {selectedShowtime}.</p>
           <p>Movie: {movie.title}</p>
           <p>Seats: {selectedSeats.join(', ')}</p>
-          <p>Total Price: ${selectedSeats.length * 10}</p>
+          <p>Total Price: &#8377; {selectedSeats.length * 10}</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="success" onClick={handleCloseConfirmation}>

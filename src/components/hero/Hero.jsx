@@ -1,5 +1,6 @@
 import React from 'react'
 import './style.css'
+import { Link } from 'react-router-dom'
 function Hero({data}) {
   return (
    <section className="hero" style={{background:`linear-gradient(#00000086, #000), url(${data.poster_path}) no-repeat center`, backgroundSize:'cover', minHeight:'80vh'}}>
@@ -15,7 +16,7 @@ function Hero({data}) {
               <div className="mt-3 text-white">
               <i class="bi bi-clock text-danger"></i> {data.duration}
               </div>
-              <button className="btn btn-danger mt-3 px-3 rounded-pill p-2">Book Ticket</button>
+              <Link to={`/movies/${data.id}`} className="text-danger">Book Now</Link>
               </div>
             </div>
         </div>

@@ -7,7 +7,6 @@ export const useBookings = () => {
   const dispatch = useDispatch();
   const bookings = useSelector((state) => state.bookings.history);
 
-  // Load bookings from localStorage when the app initializes
   useEffect(() => {
     const storedBookings = JSON.parse(localStorage.getItem('bookings')) || [];
     storedBookings.forEach(booking => dispatch(addBooking(booking)));
@@ -16,13 +15,13 @@ export const useBookings = () => {
   const bookMovie = (booking) => {
     dispatch(addBooking(booking));
     const updatedBookings = [...bookings, booking];
-    localStorage.setItem('bookings', JSON.stringify(updatedBookings)); // Save to localStorage
+    localStorage.setItem('bookings', JSON.stringify(updatedBookings)); 
   };
 
   const removeBooking = (id) => {
     dispatch(cancelBooking(id));
     const updatedBookings = bookings.filter((booking) => booking.id !== id);
-    localStorage.setItem('bookings', JSON.stringify(updatedBookings)); // Update localStorage
+    localStorage.setItem('bookings', JSON.stringify(updatedBookings)); 
   };
 
   return { bookings, bookMovie, removeBooking };

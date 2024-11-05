@@ -4,9 +4,8 @@ import React, { useState } from 'react';
 function SearchBar({ onSearch }) {
   const [query, setQuery] = useState('');
 
-  const handleChange = (e) => {
-    setQuery(e.target.value);
-    onSearch(e.target.value);
+  const handleInputChange = (event) => {
+    onSearch(event.target.value);
   };
 
   return (
@@ -18,8 +17,8 @@ function SearchBar({ onSearch }) {
    
      <input
       type="text"
-      value={query}
-      onChange={handleChange}
+      // value={query}
+      onChange={handleInputChange}
       className='w-100'
       placeholder="Search movies..."
     />

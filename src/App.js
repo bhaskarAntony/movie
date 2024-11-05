@@ -1,35 +1,32 @@
 // src/App.js
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { store } from './redux/store';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MovieList from './pages/MovieList';
-import MovieDetails from './pages/MovieDetails';
 import BookingHistory from './pages/BookingHistory';
-import './App.css';
+import MovieDetails from './pages/MovieDetails';
+import { useMovies } from './hooks/useMovies';
 import Header from './components/header/Header';
+import './App.css'
 
 function App() {
+  const { movies, status } = useMovies();
+  const [filteredMovies, setFilteredMovies] = useState(movies);
+
+  const handleSearch = (query) => {
+    setFilteredMovies(
+      movies.filter((movie) => movie.title.toLowerCase().includes(query.toLowerCase()))
+    );
+  };
+
   return (
-    <Provider store={store}>
-      <Router>
-        <div className="App">
-          {/* <header>
-            <h1>Movie Booking Application</h1>
-            
-          </header> */}
-          <Header/>
-          <main>
-            <Routes>
-              <Route path="/" element={<Navigate to="/movies" />} />
-              <Route path="/movies" element={<MovieList />} />
-              <Route path="/movies/:id" element={<MovieDetails />} />
-              <Route path="/bookings" element={<BookingHistory />} />
-            </Routes>
-          </main>
-        </div>
-      </Router>
-    </Provider>
+    <Router>
+      <Header onSearch={handleSearch} />
+      <Routes>
+        <Route path="/" element={<MovieList movies={filteredMovies.length>0?filteredMovies:movies} status={status} />} />
+        <Route path="/bookings" element={<BookingHistory />} />
+        <Route path="/movies/:id" element={<MovieDetails />} />
+      </Routes>
+    </Router>
   );
 }
 
