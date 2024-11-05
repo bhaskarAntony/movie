@@ -16,7 +16,7 @@ function Hero({data}) {
               <div className="mt-3 text-white">
               <i class="bi bi-clock text-danger"></i> {data.duration}
               </div>
-              <Link to={`/movies/${data.id}`} className="text-danger">Book Now</Link>
+              <Link to={`/movies/${data.id}`} className="btn btn-danger mt-3 px-5 rounded-pill">Book Now</Link>
               </div>
             </div>
         </div>
