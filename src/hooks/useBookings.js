@@ -1,4 +1,3 @@
-// src/hooks/useBookings.js
 import { useDispatch, useSelector } from 'react-redux';
 import { addBooking, cancelBooking } from '../redux/slices/bookingSlice';
 import { useEffect } from 'react';

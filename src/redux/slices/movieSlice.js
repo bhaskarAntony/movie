@@ -1,4 +1,3 @@
-// src/redux/slices/movieSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const movies = [

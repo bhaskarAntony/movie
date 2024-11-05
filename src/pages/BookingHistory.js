@@ -1,4 +1,3 @@
-// src/pages/BookingHistory.js
 import React, { useEffect, useState } from 'react';
 import { useMovies } from '../hooks/useMovies';
 import { Link } from 'react-router-dom';
@@ -20,7 +19,7 @@ function BookingHistory() {
   };
 
   return (
-    <div className="bg-black p-3 p-md-5">
+    <div className="bg-black p-3 p-md-5 container-fluid">
       <center>
         <h1 className="text-white fw-bold">Booking History</h1>
         <hr />

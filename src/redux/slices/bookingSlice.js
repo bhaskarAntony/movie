@@ -1,4 +1,3 @@
-// src/redux/slices/bookingSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const bookingSlice = createSlice({
@@ -6,10 +5,10 @@ const bookingSlice = createSlice({
   initialState: { history: [] },
   reducers: {
     addBooking: (state, action) => {
-      state.history.push(action.payload); // Adds the new booking to history
+      state.history.push(action.payload);
     },
     cancelBooking: (state, action) => {
-      state.history = state.history.filter(booking => booking.id !== action.payload); // Removes booking by ID
+      state.history = state.history.filter(booking => booking.id !== action.payload); 
     },
   },
 });
