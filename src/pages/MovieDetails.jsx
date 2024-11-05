@@ -137,7 +137,7 @@ function MovieDetails() {
           <p>Thank you for booking! Your seats are confirmed for {selectedShowtime}.</p>
           <p>Movie: {movie.title}</p>
           <p>Seats: {selectedSeats.join(', ')}</p>
-          <p>Total Price: &#8377; {selectedSeats.length * 10}</p>
+          <p>Total Price: &#8377; {selectedSeats.length * 300}</p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="success" onClick={handleCloseConfirmation}>
